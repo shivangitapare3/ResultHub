@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    </div>
+</div>
+
+<div class="subject-wrapper">
+
+<div class="subject-card">
+
+<h2>📝 Enter Marks</h2>
+
+<form method="POST">
+
+<input name="student_id" placeholder="Student ID">
+<input name="sem" placeholder="Semester (3 or 4)">
+
+<h3>📘 Subjects</h3>
+
+<div class="subjects-grid">
+    <input name="sub1" placeholder="Marathi 1">
+    <input name="sub2" placeholder="IKS">
+    <input name="sub3" placeholder="DS-I">
+    <input name="sub4" placeholder="DBMS-II">
+    <input name="sub5" placeholder="Practical DS & DBMS">
+    <input name="sub6" placeholder="Software Engg">
+    <input name="sub7" placeholder="Mini Project">
+    <input name="sub8" placeholder="Maths-I">
+    <input name="sub9" placeholder="Python Practical">
+    <input name="sub10" placeholder="AI">
+</div>
+
+<button type="submit">Submit Marks</button>
+
+<p>{{ msg }}</p>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pie Chart</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">📊 Student Result System</div>
+
+        <div class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/student_dashboard" class="back-btn"></a>
+            <a href="/logout" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+        </div>
+    </div>
+
+    <h1 style="text-align:center;">🥧 Pie Chart</h1>
+
+    <div class="card" style="width:500px; height:400px; margin:auto;">
+        <canvas id="chart"></canvas>
+    </div>
+
+    <div style="text-align:center;">
+        <a href="/student_analytics">⬅ Back</a>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const ctx = document.getElementById("chart");  // ✅ FIXED
+
+        let data = {{ marks|tojson }};
+        let labels = {{ subjects|tojson }};
+
+        console.log(data, labels); // optional debug
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: [
+                        "#4CAF50", "#2196F3", "#FF9800", "#E91E63",
+                        "#9C27B0", "#00BCD4", "#8BC34A", "#FFC107",
+                        "#FF5722", "#607D8B"
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+    });
+    </script>
+
+</body>
+</html>

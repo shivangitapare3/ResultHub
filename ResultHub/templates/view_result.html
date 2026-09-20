@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/student_dashboard" class="back-btn"></a>
+        <a href="/logout" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+
+        <h2>📊 Student Result</h2>
+
+        {% if not show_result %}
+        <form method="POST">
+            <input type="text" name="student_id" placeholder="Enter Student ID" required>
+            <button type="submit">Search</button>
+        </form>
+        {% endif %}
+
+        {% if show_result %}
+
+        <h3>Name: {{ student_name }}</h3>
+
+        <!-- ✅ FIXED PART -->
+        {% for i in range(calc|length) %}
+            <p><strong>SGPA:</strong> {{ calc[i][2] }}</p>
+            <p><strong>Grade:</strong> {{ calc[i][3] }}</p>
+        {% endfor %}
+
+        <div style="margin-top:20px;">
+            <!-- ✅ FIXED LINK -->
+            <a href="/download_pdf/{{ result[0][1] }}">
+                <button>Download PDF</button>
+            </a>
+            <a href="/download_excel/{{ result[0][1] }}">
+                <button>Download Excel</button>
+            </a>
+        </div>
+
+        {% endif %}
+
+    </div>
+</div>
+
+</body>
+</html>

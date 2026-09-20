@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/analytics">⬅ Back</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<h1 style="text-align:center;">📊 Subject-wise Class Average</h1>
+
+<div style="width:80%; margin:auto;">
+    <canvas id="chart"></canvas>
+</div>
+
+<script>
+let labels = {{ subjects | tojson }};
+let data = {{ marks | tojson }};
+
+new Chart(document.getElementById("chart"), {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: "Average Marks",
+            data: data,
+            backgroundColor: "rgba(0, 198, 255, 0.7)"
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+</script>
+
+</body>
+</html>

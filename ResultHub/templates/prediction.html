@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="prediction-page">
+    <div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/student_dashboard" ></a>
+        <a href="/logout" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    </div>
+</div>
+
+    <h1>🤖 AI Prediction</h1>
+    <img src="/static/images/prediction.png" class="prediction-img">
+
+    <div class="grid">
+        <div class="card-box">
+
+            <h2>🤖 Prediction Result</h2>
+
+            <p><b>Predicted SGPA:</b> {{ prediction[0] }}</p>
+
+            <p><b>Weak Subjects:</b><br>
+                {{ prediction[1] }}
+            </p>
+
+            <p><b>Suggestion:</b> {{ prediction[2] }}</p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

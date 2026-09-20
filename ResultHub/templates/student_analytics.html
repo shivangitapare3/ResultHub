@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/student_dashboard">⬅ Back</a>
+        <a href="/logout" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    </div>
+</div>
+
+<h1 style="text-align:center;">📊 Performance Analytics</h1>
+
+<!-- ✅ IMAGE BUTTON BOXES -->
+<div style="display:flex; justify-content:center; gap:40px; margin-top:30px;">
+
+    <!-- BAR CHART BOX -->
+    <div onclick="window.location.href='/bar'" 
+         style="width:180px; height:200px; background:white; border-radius:12px;
+         display:flex; flex-direction:column; justify-content:center; align-items:center;
+         cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+
+        <img src="{{ url_for('static', filename='images/bar.png') }}" 
+             style="width:90px; height:90px;"
+             onerror="this.src='https://cdn-icons-png.flaticon.com/512/1828/1828919.png';">
+        
+        <p style="margin-top:10px; font-size:18px; font-weight:bold; color:black;">
+            📊 Bar Chart
+        </p>
+    </div>
+
+    <!-- PIE CHART BOX -->
+    <div onclick="window.location.href='/pie'" 
+         style="width:180px; height:200px; background:white; border-radius:12px;
+         display:flex; flex-direction:column; justify-content:center; align-items:center;
+         cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+
+        <img src="{{ url_for('static', filename='images/pie.png') }}" 
+             style="width:90px; height:90px;"
+             onerror="this.src='https://cdn-icons-png.flaticon.com/512/3595/3595455.png';">
+        
+        <p style="margin-top:10px; font-size:18px; font-weight:bold; color:black;">
+            🥧 Pie Chart
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

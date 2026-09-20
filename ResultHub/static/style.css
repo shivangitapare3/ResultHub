@@ -1,0 +1,364 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding-top: 70px;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+.dashboard {
+    padding-top: 80px;
+}
+
+.dashboard h1,
+.dashboard h2 {
+    text-align: center;
+}
+
+/* Center Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/* Card Style */
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+/* Inputs */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Button */
+button {
+    width: 95%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(45deg,#00c6ff,#0072ff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Links */
+a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+/* Dashboard Grid */
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.card-box {
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.card-box:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.2);
+}
+
+.prediction-page {
+    text-align: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.prediction-img {
+    width: 350px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.prediction-page .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.prediction-page .card-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+
+    color: black;        /* 🔥 IMPORTANT */
+    font-size: 20px;     /* 🔥 BIGGER TEXT */
+}
+
+.prediction-page h1 {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.prediction-page h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+/* Center any box in middle of page */
+.center-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Improve card look */
+.card-box {
+    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* HOME PAGE */
+
+/* ===== GLOBAL ===== */
+body.home-page {
+    margin: 0;
+    padding-top: 70px;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+/* ===== NAVBAR ===== */
+.home-page .navbar {
+    width: 100%;
+    padding: 15px 30px;
+    background: rgba(255,255,255,0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    backdrop-filter: blur(10px);
+}
+
+.home-page .nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ===== LOGIN BUTTON ===== */
+.login-btn {
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid #4fc3f7;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #4fc3f7;
+    color: black;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+}
+
+/* ===== LEFT SECTION ===== */
+.left-section {
+    width: 50%;
+    max-width: 550px;
+}
+
+.left-section h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* FEATURES LIST */
+.features {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    margin: 12px 0;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.features li:hover {
+    transform: translateX(8px);
+}
+
+/* ===== RIGHT SECTION ===== */
+.right-section {
+    width: 50%;
+    text-align: center;
+}
+
+.right-section img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    background: transparent;
+    box-shadow: 0 0 40px rgba(0, 200, 255, 0.3);
+}
+
+.navbar {
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    
+    padding: 15px 30px;
+    background: rgba(255,255,255,0.05);
+    display: flex !important;
+    justify-content:space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+/* LOGO */
+.logo {
+    color: white;
+    border-radius: 10px;
+    border: 3px solid #4fc3f7;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* FORCE RIGHT ALIGN */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.logout-btn {
+    background: #ff4d4d;
+    border-radius: 8px;
+    border: 3px solid #4fc3f7;
+    color: white !important;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background: #ff1a1a;
+}
+
+/* SUBJECT PAGE CENTER */
+.subject-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* CARD */
+.subject-card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    width: 600px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* TWO COLUMNS */
+.subject-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column input {
+    margin: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.subject-card ul {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.chart-box {
+    width: 520px;
+    height: 360px;
+    margin: 20px auto;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+canvas{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+

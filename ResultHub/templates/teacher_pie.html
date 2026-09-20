@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Pie Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/analytics">⬅ Back</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<h1 style="text-align:center;">🥧 Class Performance</h1>
+
+<div style="width:50%; margin:auto;">
+    <canvas id="chart"></canvas>
+</div>
+
+<script>
+let labels = {{ labels | tojson }};
+let data = {{ values | tojson }};
+
+new Chart(document.getElementById("chart"), {
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: data,
+            backgroundColor: [
+                "#4CAF50", "#2196F3", "#FF9800"
+            ]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

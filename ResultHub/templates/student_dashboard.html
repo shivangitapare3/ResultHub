@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/logout" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    </div>
+</div>
+
+<h1 style="text-align:center;">🎓 Welcome {{ session['student'] }}</h1>
+<h3 style="text-align:center;">Student Dashboard</h3>
+
+<div class="grid">
+
+<a href="/view_result"><div class="card-box">📊 View Result</div></a>
+
+<a href="/student_analytics"><div class="card-box">📊 Analytics</div></a>
+
+<a href="/prediction"><div class="card-box">🤖 AI Prediction</div></a>
+
+</div>
+
+</body>
+</html>

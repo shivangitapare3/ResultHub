@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Email</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="center-page">
+    <div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    </div>
+</div>
+
+<div class="card-box">
+    <h2>Send Result Email</h2>
+
+    <form method="post">
+        <input type="text" name="student_id" placeholder="Enter Student ID" required>
+        <button type="submit">Send Email</button>
+    </form>
+</div>
+
+</body>
+</html>

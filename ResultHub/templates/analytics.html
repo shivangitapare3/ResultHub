@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Analytics</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+</div>
+
+<h1 style="text-align:center;">📊 Class Analytics</h1>
+
+{% if msg %}
+<p style="text-align:center;">{{ msg }}</p>
+{% else %}
+
+<div style="text-align:center;">
+    <p><b>Class Average:</b> {{ class_avg }}</p>
+    <p><b>Topper:</b> {{ topper.name }} ({{ topper.total }})</p>
+</div>
+
+<div style="display:flex; justify-content:center; gap:60px; margin-top:30px;">
+
+    <!-- LEFT SIDE -->
+    <div>
+        <h2 style="text-align:center;">📋 Student Performance</h2>
+
+        <table border="1">
+        <tr>
+            <th>Name</th><th>Total</th><th>Average</th>
+        </tr>
+
+        {% for r in results %}
+        <tr>
+            <td>{{ r.name }}</td>
+            <td>{{ r.total }}</td>
+            <td>{{ r.avg }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div>
+        <h2 style="text-align:center;">📉 Subject Average</h2>
+
+        <table border="1">
+        <tr>
+            <th>Subject</th><th>Average</th>
+        </tr>
+
+        {% for i in range(subjects|length) %}
+        <tr>
+            <td>{{ subjects[i] }}</td>
+            <td>{{ subject_avg[i] }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+<br>
+
+<div style="text-align:center;">
+    <a href="/teacher_bar">📊 Bar Chart</a> |
+    <a href="/teacher_pie">🥧 Pie Chart</a>
+</div>
+
+{% endif %}
+
+</body>
+</html>

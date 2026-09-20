@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    </div>
+</div>
+
+<h1 style="text-align:center;">📋 All Students Result</h1>
+<style>
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 80px;
+    text-align: center;
+}
+</style>
+
+<table border="1" style="margin:auto; width:90%; text-align:center;">
+<tr>
+    <th>Name</th>
+    <th>ID</th>
+    <th>Marathi</th>
+    <th>IKS</th>
+    <th>DS</th>
+    <th>DBMS</th>
+    <th>Practical</th>
+    <th>SE</th>
+    <th>Mini</th>
+    <th>Maths</th>
+    <th>Python</th>
+    <th>AI</th>
+</tr>
+
+{% for row in data %}
+<tr>
+    <td>{{row[0]}}</td>
+    <td>{{row[1]}}</td>
+    {% for i in range(3,13) %}
+    <td>{{row[i]}}</td>
+    {% endfor %}
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>

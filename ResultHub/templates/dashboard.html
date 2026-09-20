@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+    <div class="logo">📊 Student Result System</div>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout" class="logout-btn" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    </div>
+</div>
+<h2>Welcome, {{ name }}</h2>
+<h1 style="text-align:center;">👨‍🏫 Teacher Dashboard</h1>
+
+<div class="grid">
+
+<a href="/all_results">
+    <div class="card-box">📋 All Student Results</div></a>
+
+<a href="/send_email">
+    <div class="card-box">📧 Send Email</div></a>
+
+<a href="/add_student"><div class="card-box">➕ Add Student</div></a>
+
+<a href="/enter_marks"><div class="card-box">📝 Enter Marks</div></a>
+
+<a href="/view_result"><div class="card-box">📊 View Results</div></a>
+
+<a href="/analytics"><div class="card-box">📊 Class Analytics</div></a>
+
+<a href="/manage_subjects"><div class="card-box"> 🔝📘 Upgrade Subjects</div></a>
+
+</div>
+
+</body>
+</html>

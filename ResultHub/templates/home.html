@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="home-page">
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">📊 Student Result System</div>
+        <div><a href="/choose_login" class="login-btn">Login</a>
+            </div>
+    </div>
+
+    <!-- MAIN SECTION -->
+    <div class="home-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="left-section">
+            <h1>AI Enabled Student Result & Performance Management System</h1>
+
+            <ul class="features">
+                <li>📊 Smart Result Management</li>
+                <li>🤖 AI SGPA Prediction</li>
+                <li>📈 Performance Analytics</li>
+                <li>📧 Email Reports</li>
+            </ul>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="right-section">
+            <img src="{{ url_for('static', filename='images/home.png') }}" alt="home">
+        </div>
+
+    </div>
+
+</body>
+</html>

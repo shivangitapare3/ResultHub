@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <h2>👨‍🏫 Teacher Login</h2>
+
+        <!-- 🔴 ERROR MESSAGE -->
+        {% if error %}
+        <p style="color:red">{{ error }}</p>
+        {% endif %}
+
+        <!-- LOGIN FORM -->
+        <form method="POST">
+            <input name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button>Login</button>
+        </form>
+
+        <br>
+
+        <!-- SWITCH TO STUDENT LOGIN -->
+        <a href="/student_login">Student Login →</a>
+
+    </div>
+</div>
+
+</body>
+</html>
